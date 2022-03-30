@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import { getPost, getPosts } from "../../core/posts"
 import style from "../../styles/post.module.scss"
 
-export default function Post({ posts, post }) {
+export default function Post({ posts, post, contents }) {
 
   return (
     <Layout posts={posts}>
@@ -16,7 +16,7 @@ export default function Post({ posts, post }) {
           remarkParse,
           remarkRehype
         ]}>
-          {post}
+          {contents}
         </ReactMarkdown>
       </div>
     </Layout>
@@ -25,10 +25,10 @@ export default function Post({ posts, post }) {
 
 export async function getStaticProps({ params }) {
 
-  let post
+  let contents
 
   try {
-    post = await getPost(params.post)
+    contents = await getPost(params.post)
   } catch {
     return {
       notFound: true,
@@ -38,7 +38,8 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       posts: await getPosts(),
-      post: post,
+      post: params.post,
+      contents,
     },
     revalidate: 300,
   }
