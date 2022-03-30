@@ -13,6 +13,8 @@ export default function Blog({ Component, pageProps }) {
       <Head>
         <title>Toshimichi blog {post}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content="Toshimichi blog" />
+        <meta property="og:description" content={post} />
       </Head>
       <Component {...pageProps} />
     </>
