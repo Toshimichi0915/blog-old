@@ -1,4 +1,3 @@
-import Navbar from "./components/navbar";
 import Link from "next/link"
 import Image from "next/image";
 import Layout from "./components/layout";
@@ -10,7 +9,7 @@ export default function Index({ posts }) {
       {Object.keys(posts).map(post => {
         return (
           <article key={post} id={post} className="bg-gray-800 rounded-md text-white">
-            <Link href={`https://raw.githubusercontent.com/Toshimichi0915/blog-markdown/master/pages/${post}/contents.md`}>
+            <Link href={`/posts/${post}`}>
               <a>
                 <div className="rounded-md overflow-hidden">
                   <Image
@@ -32,4 +31,8 @@ export default function Index({ posts }) {
   )
 }
 
-export const getStaticProps = getPosts
+export async function getStaticProps() {
+  return {
+    props: { posts: await getPosts() }
+  }
+}
