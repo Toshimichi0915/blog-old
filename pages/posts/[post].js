@@ -24,10 +24,21 @@ export default function Post({ posts, post }) {
 }
 
 export async function getStaticProps({ params }) {
+
+  let post
+
+  try {
+    post = await getPost(params.post)
+  } catch {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
     props: {
       posts: await getPosts(),
-      post: await getPost(params.post),
+      post: post,
     }
   }
 }
