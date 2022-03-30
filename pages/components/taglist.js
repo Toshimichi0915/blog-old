@@ -1,5 +1,6 @@
 import { Disclosure } from "@headlessui/react"
 import { ChevronUpIcon } from '@heroicons/react/solid'
+import Link from "next/link"
 import classNames from "classnames"
 
 export default function TagList({ posts }) {
@@ -28,7 +29,13 @@ export default function TagList({ posts }) {
                   </Disclosure.Button>
                   <Disclosure.Panel>
                     {tags[tag].map(post => {
-                      return <p key={post}>{posts[post].name}</p>
+                      return (
+                        <Link key={post} href={`/posts/${post}`}>
+                          <a>
+                            <p key={post}>{posts[post].name}</p>
+                          </a>
+                        </Link>
+                      )
                     })}
                   </Disclosure.Panel>
                 </>
