@@ -14,7 +14,7 @@ export default function TagList({ posts }) {
   }
 
   return (
-    <div className="bg-slate-200 h-full rounded-md p-5">
+    <div className="bg-slate-200 h-screen rounded-md p-5">
       {Object.keys(tags).map(tag => {
         return (
           <Disclosure key={tag}>

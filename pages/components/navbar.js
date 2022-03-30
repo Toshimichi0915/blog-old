@@ -15,7 +15,7 @@ const navigation = {
 export default function Navbar({ name }) {
   return (
     <>
-      <div className="fixed w-full h-12 gap-3 flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-400">
+      <div className="fixed w-full z-30 h-12 gap-3 flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-400">
         {Object.keys(navigation).map(item => {
           return (
             <Link key={item} href={navigation[item].link}>
