@@ -33,6 +33,7 @@ export default function Index({ posts }) {
 
 export async function getStaticProps() {
   return {
-    props: { posts: await getPosts() }
+    props: { posts: await getPosts() },
+    revalidate: 300,
   }
 }
