@@ -3,7 +3,7 @@ import TagList from "./taglist";
 
 export default function Layout({ posts, children }) {
   return (
-    <>
+    <div className="overflow-hidden">
       <Navbar name="home" />
       <div className="flex flex-col-reverse md:flex-row gap-10 m-5">
         <div className="w-full md:w-1/5">
@@ -13,6 +13,6 @@ export default function Layout({ posts, children }) {
           {children}
         </div>
       </div>
-    </>
+    </div>
   )
 }
