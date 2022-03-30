@@ -14,7 +14,7 @@ export default function TagList({ posts }) {
   }
 
   return (
-    <div className="bg-slate-200 md:h-screen rounded-md p-5">
+    <div className="bg-slate-200 md:h-96 rounded-md p-5">
       {Object.keys(tags).map(tag => {
         return (
           <Disclosure key={tag}>
@@ -32,7 +32,7 @@ export default function TagList({ posts }) {
                       return (
                         <Link key={post} href={`/posts/${post}`}>
                           <a>
-                            <p key={post}>{posts[post].name}</p>
+                            <p key={post} className="text-sm">{posts[post].name}</p>
                           </a>
                         </Link>
                       )
