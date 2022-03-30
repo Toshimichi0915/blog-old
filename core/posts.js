@@ -1,6 +1,8 @@
+const baseUrl = 'https://raw.githubusercontent.com/Toshimichi0915/blog-markdown/master'
+
 export async function getPosts() {
 
-  const url = "https://raw.githubusercontent.com/Toshimichi0915/blog-markdown/master/index.json"
+  const url = `${baseUrl}/index.json`
   const response = await fetch(url)
 
   if (!response.ok) {
@@ -11,7 +13,7 @@ export async function getPosts() {
 }
 
 export async function getPost(name) {
-  const url = `https://raw.githubusercontent.com/Toshimichi0915/blog-markdown/master/pages/${name}/contents.md`
+  const url = `${baseUrl}/pages/${name}/contents.md`
   const response = await fetch(url)
 
   if (!response.ok) {

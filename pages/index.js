@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image";
 import Layout from "./components/layout";
 import { getPosts } from "../core/posts";
 
@@ -14,7 +13,7 @@ export default function Index({ posts }) {
                 <div className="flex items-stretch justify-between">
                   <h1 className="py-5 px-10 font-bold">{posts[post].name}</h1>
                   <div className="flex justify-center flex-col">
-                    <p className="text-right pr-5">{new Date(parseInt(posts[post].date) * 1000).toDateString()}</p>
+                    <p className="text-right pr-5">{new Date(posts[post].date * 1000).toDateString()}</p>
                     <p className="text-right pr-5">{posts[post].tags.join(", ")}</p>
                   </div>
                 </div>
