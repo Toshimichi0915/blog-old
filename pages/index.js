@@ -8,7 +8,7 @@ export default function Index({ posts }) {
     <Layout posts={posts}>
       {Object.keys(posts).map(post => {
         return (
-          <article key={post} id={post} className="bg-gray-800 rounded-md text-white hover:bg-slate-700 ease-linear duration-150">
+          <article key={post} id={post} className="bg-gray-800 rounded-md text-white mb-3 hover:bg-slate-700 ease-linear duration-150">
             <Link href={`/posts/${post}`}>
               <a>
                 <div className="flex items-stretch justify-between">
