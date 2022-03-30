@@ -8,20 +8,16 @@ export default function Index({ posts }) {
     <Layout posts={posts}>
       {Object.keys(posts).map(post => {
         return (
-          <article key={post} id={post} className="bg-gray-800 rounded-md text-white">
+          <article key={post} id={post} className="bg-gray-800 rounded-md text-white hover:bg-slate-700 ease-linear duration-150">
             <Link href={`/posts/${post}`}>
               <a>
-                <div className="rounded-md overflow-hidden">
-                  <Image
-                    src={`https://raw.githubusercontent.com/Toshimichi0915/blog-markdown/master/pages/${post}/thumbnail.png`}
-                    width="1280px"
-                    height="720px"
-                    alt="thumbnail" />
+                <div className="flex items-stretch justify-between">
+                  <h1 className="py-5 px-10 font-bold">{posts[post].name}</h1>
+                  <div className="flex justify-center flex-col">
+                    <p className="text-right pr-5">{new Date(parseInt(posts[post].date) * 1000).toDateString()}</p>
+                    <p className="text-right pr-5">{posts[post].tags.join(", ")}</p>
+                  </div>
                 </div>
-
-                <h1 className="pt-5 px-10 font-bold">{posts[post].name}</h1>
-                <p className="text-right pr-5">{new Date(parseInt(posts[post].date) * 1000).toDateString()}</p>
-                <p className="text-right pr-5 pb-5">{posts[post].tags.join(", ")}</p>
               </a>
             </Link>
           </article>
