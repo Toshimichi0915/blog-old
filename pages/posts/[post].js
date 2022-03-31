@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkParse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
-import Layout from "../components/layout"
+import Layout from "../../components/layout"
 import { getPost, getPosts } from "../../core/posts"
 import style from "../../styles/post.module.scss"
 
