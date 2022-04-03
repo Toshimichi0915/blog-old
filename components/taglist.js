@@ -32,8 +32,8 @@ export default function TagList({ posts }) {
                     {tags[tag].map(post => {
                       return (
                         <Link key={post} href={`/posts/${post.id}`}>
-                          <a>
-                            <p className="text-sm">{post.name}</p>
+                          <a className="text-sm hover:text-blue-400">
+                            <p>{post.name}</p>
                           </a>
                         </Link>
                       )
