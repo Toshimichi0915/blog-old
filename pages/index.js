@@ -13,7 +13,7 @@ export default function Index({ posts }) {
                 <div className="flex items-stretch justify-between">
                   <h1 className="py-5 px-10 font-bold">{post.name}</h1>
                   <div className="flex justify-center flex-col">
-                    <p className="text-right pr-5">{new Date(post.date * 1000).toDateString()}</p>
+                    <p className="text-right pr-5">{new Date(post.date * 1000).toLocaleDateString("ja-JP")}</p>
                     <p className="text-right pr-5">{post.tags.join(", ")}</p>
                   </div>
                 </div>
