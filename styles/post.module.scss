@@ -2,15 +2,19 @@
   h1 {
     @apply text-center text-2xl p-3 mb-2 rounded-sm bg-slate-800 text-white;
   }
+
   h2 {
     @apply text-xl p-2 mb-2 border-b-2 border-slate-400;
   }
+
   h3 {
     @apply border-l-4 border-red-500 p-1 my-2;
   }
+
   pre {
-    @apply bg-slate-800 text-white p-2 whitespace-pre-wrap text-sm;
+    @apply text-xs md:text-sm bg-slate-800 text-white p-2 whitespace-pre-wrap break-words overflow-hidden;
   }
+
   p {
     @apply my-3;
   }
