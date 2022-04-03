@@ -2,11 +2,12 @@ import { Disclosure } from "@headlessui/react"
 import { ChevronUpIcon } from '@heroicons/react/solid'
 import Link from "next/link"
 import classNames from "classnames"
+import { sortPosts } from "../core/posts"
 
 export default function TagList({ posts }) {
   let tags = {}
-  for (const post in posts) {
-    for (const tag of posts[post].tags) {
+  for (const post of sortPosts(posts)) {
+    for (const tag of post.tags) {
       let arr = tags[tag] || []
       tags[tag] = arr
       arr.push(post)
@@ -30,9 +31,9 @@ export default function TagList({ posts }) {
                   <Disclosure.Panel>
                     {tags[tag].map(post => {
                       return (
-                        <Link key={post} href={`/posts/${post}`}>
+                        <Link key={post} href={`/posts/${post.id}`}>
                           <a>
-                            <p key={post} className="text-sm">{posts[post].name}</p>
+                            <p className="text-sm">{post.name}</p>
                           </a>
                         </Link>
                       )

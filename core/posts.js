@@ -12,6 +12,15 @@ export async function getPosts() {
   return await response.json()
 }
 
+export function sortPosts(posts) {
+  return Object.entries(posts)
+    .map(array => ({
+      id: array[0],
+      ...array[1],
+    }))
+    .sort((a, b) => b.date - a.date)
+}
+
 export async function getPost(name) {
   const url = `${baseUrl}/pages/${name}/contents.md`
   const response = await fetch(url)

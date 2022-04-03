@@ -1,20 +1,20 @@
 import Link from "next/link"
 import Layout from "../components/layout";
-import { getPosts } from "../core/posts";
+import { getPosts, sortPosts } from "../core/posts";
 
 export default function Index({ posts }) {
   return (
     <Layout posts={posts} name="home">
-      {Object.keys(posts).map(post => {
+      {sortPosts(posts).map(post => {
         return (
-          <article key={post} id={post} className="bg-gray-800 rounded-md text-white mb-3 hover:bg-slate-700 ease-linear duration-150">
-            <Link href={`/posts/${post}`}>
+          <article key={post} className="bg-gray-800 rounded-md text-white mb-3 hover:bg-slate-700 ease-linear duration-150">
+            <Link href={`/posts/${post.id}`}>
               <a>
                 <div className="flex items-stretch justify-between">
-                  <h1 className="py-5 px-10 font-bold">{posts[post].name}</h1>
+                  <h1 className="py-5 px-10 font-bold">{post.name}</h1>
                   <div className="flex justify-center flex-col">
-                    <p className="text-right pr-5">{new Date(posts[post].date * 1000).toDateString()}</p>
-                    <p className="text-right pr-5">{posts[post].tags.join(", ")}</p>
+                    <p className="text-right pr-5">{new Date(post.date * 1000).toDateString()}</p>
+                    <p className="text-right pr-5">{post.tags.join(", ")}</p>
                   </div>
                 </div>
               </a>
