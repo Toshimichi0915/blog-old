@@ -9,7 +9,7 @@ import style from "../../styles/post.module.scss"
 export default function Post({ posts, post, contents }) {
 
   return (
-    <Layout posts={posts}>
+    <Layout posts={posts} name="home">
       <div className={style.post}>
         <ReactMarkdown remarkPlugins={[
           remarkGfm,

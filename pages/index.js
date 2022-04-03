@@ -4,7 +4,7 @@ import { getPosts } from "../core/posts";
 
 export default function Index({ posts }) {
   return (
-    <Layout posts={posts}>
+    <Layout posts={posts} name="home">
       {Object.keys(posts).map(post => {
         return (
           <article key={post} id={post} className="bg-gray-800 rounded-md text-white mb-3 hover:bg-slate-700 ease-linear duration-150">

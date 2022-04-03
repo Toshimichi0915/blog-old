@@ -9,7 +9,11 @@ const navigation = {
   github: {
     name: "GitHub",
     link: "https://github.com/Toshimichi0915",
-  }
+  },
+  temp: {
+    name: "Temp",
+    link: "/temp",
+  },
 }
 
 export default function Navbar({ name }) {

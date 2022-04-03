@@ -1,10 +1,10 @@
 import Navbar from "./navbar";
 import TagList from "./taglist";
 
-export default function Layout({ posts, children }) {
+export default function Layout({ posts, name, children }) {
   return (
     <div className="overflow-hidden">
-      <Navbar name="home" />
+      <Navbar name={name} />
       <div className="flex flex-col-reverse md:flex-row gap-10 m-5">
         <nav className="w-full md:w-1/5">
           <TagList posts={posts} />
