@@ -3,7 +3,7 @@ import remarkParse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import Layout from "../../components/layout"
-import { getPost, getPosts } from "../../core/posts"
+import { getPost, getPosts } from "../../lib/posts"
 import style from "../../styles/post.module.scss"
 
 export default function Post({ posts, post, contents }) {

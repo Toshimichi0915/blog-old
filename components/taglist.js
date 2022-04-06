@@ -2,7 +2,7 @@ import { Disclosure } from "@headlessui/react"
 import { ChevronUpIcon } from '@heroicons/react/solid'
 import Link from "next/link"
 import classNames from "classnames"
-import { sortPosts } from "../core/posts"
+import { sortPosts } from "../lib/posts"
 
 export default function TagList({ posts }) {
   let tags = {}

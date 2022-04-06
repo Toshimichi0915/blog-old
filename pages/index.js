@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Layout from "../components/layout";
-import { getPosts, sortPosts } from "../core/posts";
+import { getPosts, sortPosts } from "../lib/posts";
 
 export default function Index({ posts }) {
   return (
