@@ -18,4 +18,13 @@
   p {
     @apply my-3;
   }
+
+  ol, ul, menu {
+    list-style: normal;
+    padding-inline-start: 20px;
+  }
+
+  li {
+    @apply py-2;
+  }
 }
