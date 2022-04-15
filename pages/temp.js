@@ -2,7 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import Layout from "../components/layout"
-import { getPosts } from "../core/posts"
+import { getPosts } from "../lib/posts"
 
 function newId() {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
