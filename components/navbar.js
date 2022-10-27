@@ -9,11 +9,7 @@ const navigation = {
   github: {
     name: "GitHub",
     link: "https://github.com/Toshimichi0915",
-  },
-  temp: {
-    name: "Temp",
-    link: "/temp",
-  },
+  }
 }
 
 export default function Navbar({ name }) {
@@ -25,7 +21,7 @@ export default function Navbar({ name }) {
             <Link key={item} href={navigation[item].link}>
               <a>
                 <p
-                  className={classNames("rounded-md py-1 px-3 text-white hover:bg-emerald-400 ease-linear duration-150",
+                  className={classNames("rounded-md py-1 px-5 text-white hover:bg-emerald-400 ease-linear duration-150",
                     { "bg-blue-400": item === name })}>{navigation[item].name}</p>
               </a>
             </Link>
